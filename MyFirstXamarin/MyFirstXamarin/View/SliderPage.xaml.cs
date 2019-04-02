@@ -11,14 +11,12 @@ using Xamarin.Forms.Xaml;
 namespace MyFirstXamarin.View
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class SecondPage : ContentPage
+	public partial class SliderPage : ContentPage
 	{
-        DataVM data;
-		public SecondPage ()
+		public SliderPage ()
 		{
 			InitializeComponent ();
-            data = new DataVM();
-            BindingContext = data;
+            BindingContext = new SliceVM();
 		}
 	}
 }

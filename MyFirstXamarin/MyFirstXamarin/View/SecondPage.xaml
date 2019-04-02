@@ -15,8 +15,8 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Label Text="Upper left" Grid.Row="0" Grid.Column="0"/>
-                <Label Text="Upper right" Grid.Row="0" Grid.Column="1"/>
+                <Label Text="{Binding Title}" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="End"/>
+                <Label Text="{Binding Name}" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Start"/>
                 <Label Text="Lower left" Grid.Row="1" Grid.Column="0"/>
                 <Label Text="Lower Right" Grid.Row="1" Grid.Column="1"/>
             </Grid>

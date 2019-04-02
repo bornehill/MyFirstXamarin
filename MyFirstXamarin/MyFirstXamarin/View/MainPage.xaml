@@ -12,6 +12,7 @@
         <Label Text="Other label!" 
             FontSize="Large"/>
             <Button Text="Go next" Clicked="Button_Clicked" />
+            <Button Text="Go Slider" Clicked="Button_Clicked_1" />
         </StackLayout>
     </ContentPage.Content>
 

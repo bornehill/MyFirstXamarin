@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyFirstXamarin.View.SliderPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Slider x:Name="mySlider"
+                    Minimum="0"
+                    Maximum="100"
+                    VerticalOptions="CenterAndExpand" />
+            <Label 
+                FontAttributes="Bold"
+                FontSize="20" 
+                HorizontalOptions="Center" 
+                BindingContext="{x:Reference mySlider}"
+                Text="{Binding Value}"/>
+            <Label Text="{Binding LabelText}" 
+                   BackgroundColor="Blue"
+                   TextColor="White"/>
+            <Button Text="Click!"
+                    BackgroundColor="Blue"
+                    TextColor="Yellow"
+                    Command="{Binding ChangeTextCommand}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
