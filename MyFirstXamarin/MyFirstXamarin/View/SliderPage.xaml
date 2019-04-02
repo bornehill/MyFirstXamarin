@@ -21,6 +21,10 @@
                     BackgroundColor="Blue"
                     TextColor="Yellow"
                     Command="{Binding ChangeTextCommand}" />
+            <Image Source="punish.png"
+                   Aspect="AspectFit"
+                   WidthRequest="75"
+                   HeightRequest="75"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
