@@ -13,6 +13,7 @@
             FontSize="Large"/>
             <Button Text="Go next" Clicked="Button_Clicked" />
             <Button Text="Go Slider" Clicked="Button_Clicked_1" />
+            <Button Text="Go ListView" Clicked="Button_Clicked_2" />
         </StackLayout>
     </ContentPage.Content>
 
