@@ -9,6 +9,7 @@ namespace MyFirstXamarin.Model
         public string Name { get; set; }
         public string Address { get; set; }
         public string ImageSource { get; set; }
+        public decimal Age { get; set; }
 
         public Person()
         {
@@ -17,11 +18,12 @@ namespace MyFirstXamarin.Model
             ImageSource = "punish.png";
         }
 
-        public Person(string name, string addr)
+        public Person(string name, string addr, decimal age = 0)
         {
             Name = name;
             Address = addr;
             ImageSource = "punish.png";
+            Age = age;
         }
     }
 }
