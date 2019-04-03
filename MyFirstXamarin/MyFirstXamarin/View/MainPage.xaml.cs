@@ -29,5 +29,10 @@ namespace MyFirstXamarin
         {
             Navigation.PushAsync(new ListViewPage());
         }
+
+        private void Button_Clicked_3(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new BehaviorPage());
+        }
     }
 }
