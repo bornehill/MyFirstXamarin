@@ -1,4 +1,5 @@
-﻿using MyFirstXamarin.ViewModel;
+﻿using MyFirstXamarin.Model;
+using MyFirstXamarin.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,5 +19,13 @@ namespace MyFirstXamarin.View
 			InitializeComponent ();
             BindingContext = new PersonListVM();
 		}
-	}
+
+        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem == null)
+                return;
+            Person person = e.SelectedItem as Person;
+            DisplayAlert("Selected", person.Name, "OK");
+        }
+    }
 }
