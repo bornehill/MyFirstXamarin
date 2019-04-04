@@ -15,6 +15,7 @@
             <Button Text="Go Slider" Clicked="Button_Clicked_1" />
             <Button Text="Go ListView" Clicked="Button_Clicked_2" />
             <Button Text="Go Behvior" Clicked="Button_Clicked_3" />
+            <Button Text="Go message" Clicked="Button_Clicked_4" />
         </StackLayout>
     </ContentPage.Content>
 

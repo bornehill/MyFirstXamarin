@@ -20,7 +20,16 @@
     <None Update="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <None Update="View\BehaviorPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="View\ListViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
     <None Update="View\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="View\MessagePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="View\SecondPage.xaml">
@@ -32,6 +41,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="View\MessagePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="View\BehaviorPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
