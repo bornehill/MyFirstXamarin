@@ -2,11 +2,46 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyFirstXamarin.View.MessagePage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style
+                x:Key="BigRedLabel"
+                TargetType="Label">
+                <Setter 
+                    Property="HorizontalOptions"
+                    Value="Center"/>
+                <Setter 
+                    Property="VerticalOptions"
+                    Value="CenterAndExpand"/>
+                <Setter 
+                    Property="FontSize"
+                    Value="Large"/>
+                <Setter 
+                    Property="TextColor"
+                    Value="Red"/>
+            </Style>
+            <Style
+                x:Key="BigBlueLabel"
+                TargetType="Label">
+                <Setter 
+                    Property="HorizontalOptions"
+                    Value="Center"/>
+                <Setter 
+                    Property="VerticalOptions"
+                    Value="CenterAndExpand"/>
+                <Setter 
+                    Property="FontSize"
+                    Value="Large"/>
+                <Setter 
+                    Property="TextColor"
+                    Value="Blue"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Click button!"
-                   FontSize="Large"
-                   TextColor="Blue"/>
+                    Style="{StaticResource BigRedLabel}"/>
             <Button Text="Clicke me!"
                     Command="{Binding ButtonClickedCommand}" />
         </StackLayout>

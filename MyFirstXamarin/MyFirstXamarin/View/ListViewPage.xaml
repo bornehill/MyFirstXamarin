@@ -10,6 +10,38 @@
                 x:Key="doubleToIntegerConverter" />
             <converters:SelectedItemEventArgsToSelectedItemConverter
                 x:Key="SelectedItemConverter" />
+            <Style
+                x:Key="BigRedLabel"
+                TargetType="Label">
+                <Setter 
+                    Property="HorizontalOptions"
+                    Value="Center"/>
+                <Setter 
+                    Property="VerticalOptions"
+                    Value="CenterAndExpand"/>
+                <Setter 
+                    Property="FontSize"
+                    Value="Large"/>
+                <Setter 
+                    Property="TextColor"
+                    Value="Red"/>
+            </Style>
+            <Style
+                x:Key="BigBlueLabel"
+                TargetType="Label">
+                <Setter 
+                    Property="HorizontalOptions"
+                    Value="Center"/>
+                <Setter 
+                    Property="VerticalOptions"
+                    Value="CenterAndExpand"/>
+                <Setter 
+                    Property="FontSize"
+                    Value="Large"/>
+                <Setter 
+                    Property="TextColor"
+                    Value="Blue"/>
+            </Style>            
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
