@@ -2,18 +2,26 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:converters="clr-namespace:MyFirstXamarin.Converters"
+             xmlns:behaviors="clr-namespace:MyFirstXamarin.Behaviors"
              x:Class="MyFirstXamarin.View.ListViewPage">
     <ContentPage.Resources>
         <ResourceDictionary>
             <converters:DoubleToIntConverter
                 x:Key="doubleToIntegerConverter" />
+            <converters:SelectedItemEventArgsToSelectedItemConverter
+                x:Key="SelectedItemConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
             <ListView ItemsSource="{Binding People}"
-                      HasUnevenRows="True"
-                      ItemSelected="ListView_ItemSelected">
+                      HasUnevenRows="True">
+                <ListView.Behaviors>
+                    <behaviors:EventToCommandBehavior
+                        EventName="ItemSelected"
+                        Command="{Binding ItemSelectedCommand}"
+                        Converter="{StaticResource SelectedItemConverter}" />
+                </ListView.Behaviors>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell

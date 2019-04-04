@@ -19,13 +19,5 @@ namespace MyFirstXamarin.View
 			InitializeComponent ();
             BindingContext = new PersonListVM();
 		}
-
-        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            if (e.SelectedItem == null)
-                return;
-            Person person = e.SelectedItem as Person;
-            DisplayAlert("Selected", person.Name, "OK");
-        }
     }
 }
