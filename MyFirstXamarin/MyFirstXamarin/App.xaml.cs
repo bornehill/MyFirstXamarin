@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyFirstXamarin.Data;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,6 +8,7 @@ namespace MyFirstXamarin
 {
     public partial class App : Application
     {
+        static PersonDataBase database;
         public App()
         {
             InitializeComponent();
@@ -27,6 +29,19 @@ namespace MyFirstXamarin
         protected override void OnResume()
         {
             // Handle when your app resumes
+        }
+
+        public static PersonDataBase Database
+        {
+            get {
+                if (database == null)
+                {
+                    database = new PersonDataBase(
+                        DependencyService.Get<IFileHelper>().GetLocalFilePath("PersonSQLite.db3")
+                        );
+                }
+                return database;
+            }
         }
     }
 }

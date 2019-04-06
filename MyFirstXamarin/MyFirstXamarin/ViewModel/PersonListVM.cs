@@ -29,20 +29,25 @@ namespace MyFirstXamarin.ViewModel
 
         public PersonListVM()
         {
-            string[] names = { "Juan", "Pedro", "Cloe" };
-            string[] addresses = { "Palomino", "Santiago", "Villa Juana" };
-
-            var ram = new Random();
-
-            for (int pos = 0; pos < 3; pos++)
-                People.Add(new Person(names[pos], addresses[pos], (decimal)(pos + 18 * ram.NextDouble())));
-
+            PopulatePeople();
             ItemSelectedCommand = new Command<Person>(HandleItemSelected);
+        }
+
+        private async void PopulatePeople()
+        {
+            try
+            {
+                List<Person> people = await App.Database.GetPeopleAsync();
+                foreach (Person person in people)
+                    People.Add(person);
+            }
+            catch (Exception e)
+            { }
         }
 
         private void HandleItemSelected(Person person)
         {
-            SelectedItemText = $"{person.Name}";
+            SelectedItemText = $"{person.FirstName}";
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -57,12 +57,13 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell
-                            Text="{Binding Name}"
+                            Text="{Binding FirstName}"
                             Detail="{Binding Age, Converter={StaticResource doubleToIntegerConverter}}">
                         </TextCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Button Text="Go to Entry" Clicked="Button_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

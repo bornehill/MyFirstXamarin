@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyFirstXamarin.View.EntryPage">
+    <ContentPage.Content>
+        <StackLayout
+            VerticalOptions="Start">
+            <StackLayout
+                Orientation="Horizontal">
+                <Entry x:Name="FirstNameEntry" 
+                       Placeholder="First Name" 
+                       Text="{Binding FirstName}"/>
+                <Entry x:Name="LastNameEntry" 
+                       Placeholder="Last Name" 
+                       Text="{Binding LastName}"/>                
+            </StackLayout>
+            <Entry x:Name="AddressEntry" 
+                       Placeholder="Address" 
+                       Text="{Binding Address}"/>
+            <Entry x:Name="PhoneNumberEntry" 
+                       Placeholder="Phone Number" 
+                       Text="{Binding PhoneNumber}"/>
+            <Entry x:Name="AgeEntry" 
+                       Placeholder="Age" 
+                       Text="{Binding Age}"/>
+            <Button Text="Add" Clicked="AddPerson"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

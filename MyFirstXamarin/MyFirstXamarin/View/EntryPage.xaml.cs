@@ -12,17 +12,20 @@ using Xamarin.Forms.Xaml;
 namespace MyFirstXamarin.View
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ListViewPage : ContentPage
+	public partial class EntryPage : ContentPage
 	{
-		public ListViewPage ()
+        EntryVM entry;
+		public EntryPage ()
 		{
 			InitializeComponent ();
-            BindingContext = new PersonListVM();
+            entry = new EntryVM();
+            BindingContext = entry;
 		}
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private void AddPerson(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new EntryPage());
+            entry.AddToPeople();
+            Navigation.PushAsync(new ListViewPage());
         }
     }
 }

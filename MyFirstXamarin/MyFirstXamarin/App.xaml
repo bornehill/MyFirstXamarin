@@ -5,13 +5,18 @@
     <Application.Resources>
         <ResourceDictionary>
             <Style
-                TargetType="Label">
+                x:Key="BaseStyle"
+                TargetType="View">
                 <Setter 
                     Property="HorizontalOptions"
                     Value="Center"/>
                 <Setter 
                     Property="VerticalOptions"
                     Value="CenterAndExpand"/>
+            </Style>            
+            <Style
+                TargetType="Label"
+                BasedOn="{StaticResource BaseStyle}">
                 <Setter 
                     Property="FontSize"
                     Value="Large"/>
