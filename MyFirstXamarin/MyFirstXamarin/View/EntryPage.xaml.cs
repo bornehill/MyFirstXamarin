@@ -1,4 +1,5 @@
-﻿using MyFirstXamarin.Model;
+﻿using MyFirstXamarin.Data;
+using MyFirstXamarin.Model;
 using MyFirstXamarin.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,23 @@ namespace MyFirstXamarin.View
 
         private void AddPerson(object sender, EventArgs e)
         {
-            entry.AddToPeople();
+            var id = 1;
+            var repo = new PersonRepository();
+            var people = repo.GetAll();
+            if (people != null)
+                id = people.Count()+1;
+            var person = new Person
+            {
+                Id = id,
+                FirstName = entry.FirstName,
+                LastName = entry.LastName,
+                ImageSource = entry.ImageSource,
+                PhoneNumber = entry.PhoneNumber,
+                Address = entry.Address,
+                Age = entry.Age
+            };
+            repo.Save(person);
+
             Navigation.PushAsync(new ListViewPage());
         }
     }
