@@ -1,6 +1,7 @@
 ﻿using MyFirstXamarin.Data;
 using MyFirstXamarin.Model;
 using MyFirstXamarin.ViewModel;
+using Plugin.Connectivity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,10 +22,20 @@ namespace MyFirstXamarin.View
 			InitializeComponent ();
             entry = new EntryVM();
             BindingContext = entry;
+            CrossConnectivity.Current.ConnectivityChanged += (sender, args) =>
+            {
+                DisplayAlert("Connectivity changed",
+                    $"Is Connected: {args.IsConnected.ToString()}",
+                    "Ok");
+            };
 		}
 
         private void AddPerson(object sender, EventArgs e)
         {
+            DisplayAlert("Connected?",
+                $"We are connected to internet: {CrossConnectivity.Current.IsConnected.ToString()}",
+                "Ok");
+
             var id = 1;
             var repo = new PersonRepository();
             var people = repo.GetAll();
