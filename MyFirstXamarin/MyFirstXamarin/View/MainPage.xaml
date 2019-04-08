@@ -16,6 +16,7 @@
             <Button Text="Go ListView" Clicked="Button_Clicked_2" />
             <Button Text="Go Behvior" Clicked="Button_Clicked_3" />
             <Button Text="Go message" Clicked="Button_Clicked_4" />
+            <Button Text="Go localization" Clicked="Button_Clicked_5" />
         </StackLayout>
     </ContentPage.Content>
 

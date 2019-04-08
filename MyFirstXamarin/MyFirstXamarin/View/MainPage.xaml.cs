@@ -39,5 +39,10 @@ namespace MyFirstXamarin
         {
             Navigation.PushAsync(new MessagePage());
         }
+
+        private void Button_Clicked_5(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new InternationalPage());
+        }
     }
 }

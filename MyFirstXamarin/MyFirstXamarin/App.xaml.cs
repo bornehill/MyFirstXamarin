@@ -1,5 +1,6 @@
 ﻿using MyFirstXamarin.Data;
 using System;
+using System.Globalization;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -8,6 +9,7 @@ namespace MyFirstXamarin
 {
     public partial class App : Application
     {
+        public CultureInfo Culture { get; set; }
         static PersonDataBase database;
         public App()
         {
